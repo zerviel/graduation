@@ -1,0 +1,39 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+この論文は，Einstein方程式が4次元では唯一の方程式になる事実を示したものである．
+
+\subsection{場の解析力学}
+前期にも扱いましたがLagrangianの変数を場の変数にしたときのEuler-Lagrange方程式\footnote{以後EL方程式と省略}について少し解説する．今ここでは一般に場の変数を\(\Psi^A = \Psi^A(x^i)\)として，Lagrangianは
+\begin{equation*}
+    \mathscr{L} = \mathscr{L}( \Psi ^A, \Psi ^A _{,i_1}, \Psi ^A _{,i_1 i_2}, \dots , \Psi ^A _{,i_1 i_2 \dots i_r})
+\end{equation*}
+であり，
+\begin{equation*}
+    \Psi ^A _{,i_1 i_2 \dots i_r} \equiv \dfrac{\partial ^p \Psi^A}{\partial x^{i_1} \dots \partial x^{i_p}}
+\end{equation*}
+と定義する．このとき，EL方程式については以下のようになる．
+\begin{equation*}
+    \dfrac{\partial \mathscr{L}}{\partial \Psi^A} + \sum ^r _{p=1} {(-1)}^p \dfrac{\partial ^p}{\partial x^{i_1}\partial x^{i_2} \dots \partial x^{i_p}}\left( \dfrac{\partial \mathscr{L}}{\partial \Psi ^A _{,i_1 i_2 \dots i_r}} \right) =0 \tag{1.2} \label{ELeq}
+\end{equation*}
+
+基本的な発想としては通常のEL方程式の導出と大差はない．つまり，高階微分項の変分を順に取っていき微分と変分を交換し，作用積分の部分積分的操作を行って各項の一つ次元の落ちた表面項での変分がゼロと仮定して，それ以外の部分は\(\delta \Psi ^A\)でくくることができ，恒等的に作用変分がゼロであるための必要十分条件から導くことができる．
+
+~\eqref{ELeq}においては任意の高階微分まで考えているが，通常3階以上の高階微分項が現れてしまうと問題が発生するのでせっかく取った高階微分項は今回は考えずこれ以後は\(r=2\)で考える．また，一般の場の変数を考えているがここではRiemann計量\(g_{ij}\)を取る．
+
+\subsection{この論文の構成}
+なので，この論文においてはLagrangianは
+\begin{equation}
+    \mathscr{L} = \mathscr{L}(g_{ij}, g_{ij,k}, g_{ij,kh})
+    \tag{1.3} \label{lag1}
+\end{equation}
+を取る．この論文の最終目標は，このようなLagrangianのもとで，次元を4次元に限定したときのEL方程式を具体的に求めたとき，Einstein方程式が唯一の方程式となることを示すことである．しかしこのようなLagrangianを用いたとき\eqref{ELeq}を見てもわかるように，4次の微分項を含んでしまう．Einstein方程式にはこれらの項は含まれないはずである．
+
+そこで，Section2では\eqref{ELeq}の高階微分項\(g_{ij,rst}, g_{ij,rstu} \)が消えるための必要十分条件をそれぞれ求める．Section3では具体的に次元を固定し得られた必要十分条件からLagrangianの形具体的に書き下す．\(n=2,3\)の場合には，
+\begin{equation*}
+    \mathscr{L} = a\sqrt{g}R + b \sqrt{g}
+    \tag{3.1} \label{n=2,3}
+\end{equation*}
+となる．\(n=4\)では，結論として得られたLagrangianから，EL方程式がEinstein方程式に一致することが導ける．
+\end{document}

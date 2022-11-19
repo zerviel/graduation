@@ -1,0 +1,54 @@
+\documentclass[a4j, 12pt]{jsarticle}
+\usepackage{crossreference}
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{ascmac}
+\usepackage{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{tikz}
+\usepackage[version=4]{mhchem}
+\usepackage{xcolor}
+\usepackage{here}
+\usepackage{wrapfig}
+\usepackage{xr}
+\usepackage{subfiles}
+\usetikzlibrary{intersections,calc,arrows.meta}
+
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\lam}[1]{\varLambda^{#1}}
+\newcommand{\x}[1]{\chi^{#1}}
+
+\title{卒業研究ノートver1.3}
+\author{中越一磨}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+    \subfile{sections/abstract.tex}
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section*{はじめに}
+\subfile{sections/intro.tex}
+
+\part{The Uniqueness of The Einstein Field Equation in a Four-Dimensional Space}
+
+\section{Introduction}
+\subfile{sections/part1/ss1.tex}
+
+\section{Degenerate Lagrange Densities in n-Dimensions}
+\subfile{sections/part1/ss2.tex}
+
+\section{Dimensionality Restrictions}
+\subfile{sections/part1/ss3.tex}
+\clearpage
+\part{The Einstein Tensor and Its Generalizations}
+
+
+\end{document}

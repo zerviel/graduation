@@ -1,0 +1,157 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+\subsection{前提条件について}
+これ以後では，以下のことを仮定して話を進めていく．
+座標変換 \(\bar{x}^i=\bar{x}^i(x^j)\)は，\(C^3\)級函数まで仮定し，そこから得られる計量は
+\begin{equation*}
+    \det\norm{\dfrac{\partial x^i}{\partial \bar{x}^j}}>0
+\end{equation*}
+のように正定値として定義する．また，議論を円滑にすすめるために以下の記号を定義する．
+
+\begin{equation*}
+    g_{ij,k} \equiv \dfrac{\partial g_{ij} }{\partial x^k } \, , \rm{etc} \ldots
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \varLambda^{ij,kh} &\equiv \dfrac{\partial \mathscr{L}  }{\partial g_{ij,kh} } \\
+        \varLambda^{ij,k} &\equiv \dfrac{\partial \mathscr{L}  }{\partial g_{ij,k} } \\
+        \varLambda^{ij} &\equiv \dfrac{\partial \mathscr{L}  }{\partial g_{ij} }
+    \end{split}
+    \tag{2.2} \label{lam1}
+\end{equation*}
+
+最後に，EL方程式の左辺を
+\begin{equation*}
+    E^{hk} \equiv \dfrac{\partial }{\partial x^i }\left[ \varLambda^{hk,i} - \dfrac{\partial }{\partial x^j }\varLambda^{hk,ij} \right] - \varLambda^{hk}
+    \tag{2.4} \label{elleft}
+\end{equation*}
+として，EL方程式は
+\begin{equation*}
+    E^{hk} =0
+    \tag{2.3} \label{el}
+\end{equation*}
+と表せる．このとき，当然\(E^{hk}\)はそれぞれ愚直に連鎖律に基づき展開すると引数は
+\begin{equation*}
+    E^{hk} = E^{hk}(g_{ij}, g_{ij,r}, g_{ij,rs}, g_{ij,rst}, g_{ij,rstu})
+    \tag{2.5} \label{ehk4}
+\end{equation*}
+となり，4次の微分項まで含んでしまう．\footnote{具体的に展開したものに関してはSection2.3以降で触れる．}このSectionの主目的はこの3次・4次の微分項の消えるための必要十分条件を探すことである．つまり，最終的に\(E^{hk}\)は，
+\begin{equation*}
+    E^{hk} = E^{hk}(g_{ij}, g_{ij,r}, g_{ij,rs})
+    \tag{2.6} \label{ehk2}
+\end{equation*}
+になることを目的としている．このようになるような条件を見つけられれば， Lagrangianと\(E^{hk}\)は同じ引数を持つ函数となる．この論文では，この\(E^{hk}\)を\textit{L-degenerate}と呼ぶことにする．
+
+\subsection{対称性について}
+この項では，定義した記号の対称性について触れていく．Lagrangian密度であるためには，スカラー函数である必要がある．そのためには，以下のような恒等式を満たしている必要がある．
+\begin{equation*}
+    \varLambda^{ij,kh}+\varLambda^{ih,jk}+\varLambda^{ik,hj}=0
+    \tag{2.7} \label{id1}
+\end{equation*}
+\begin{equation*}
+    -\varLambda^{hk,i} = \varGamma^i_{jm} \lam{hk,jm}+2\varGamma^k_{jm} \lam{hj,im}+2\varGamma^h_{jm} \lam{kj,im}
+    \tag{2.8} \label{id2}
+\end{equation*}
+ここで，\(\varGamma^i_{jm}\)については通常のChristoffel記号
+\begin{equation*}
+    \varGamma^i_{jm} = \dfrac{1}{2}g^{ih}(g_{hj,m}+g_{mh,j}-g_{jm,h})
+\end{equation*}
+を用いる．\eqref{id1}から次のような対称性が導ける．
+\begin{equation*}
+    \lam{ij,kh} = \lam{kh,ij}
+    \tag{2.9} \label{sym1}
+\end{equation*}
+この対称性は，Bianchi恒等式からEinsteinテンソルを導いたときのように導くことができる．
+
+\textit{Proof.} \eqref{id1}の添字をcyclicにまわしてできる4つの式を符号を交互に入れ替え辺々足し合わせていく．
+\begin{align*}
+    \lam{ij,kh}+\lam{ih,jk}+\lam{ik,hj}  & = 0 \\
+    -\lam{hi,jk}-\lam{hk,ij}-\lam{hj,ki} & = 0 \\
+    \lam{kh,ij}+\lam{kj,hi}+\lam{jh,ik}  & = 0 \\
+    -\lam{jk,hi}-\lam{ji,kh}-\lam{jh,ik} & = 0
+\end{align*}
+このとき，偏微分の交換可能性と計量テンソルの添字の対称性を用いて，
+\begin{equation*}
+    2\lam{ij,kh}-2\lam{kh,ij}
+\end{equation*}
+より，\eqref{sym1}を得られる．\(\blacksquare\)
+
+\subsection{EL方程式の展開}
+この項では，具体的に4次の微分項などが消えていくための必要十分条件を求めるために\eqref{elleft}を具体的に展開していく．そのための準備として，新たに以下の記法を定義していく．
+\begin{equation*}
+    \lam{ij,kh;rs,tu} \equiv \dfrac{\partial \lam{ij,kh}}{\partial g_{rs,tu} }
+    \tag{2.10} \label{lam2}
+\end{equation*}
+\begin{equation*}
+    \x{ij,kh;rs,tu} \equiv \lam{ij,kh;rs,tu} + \lam{ij,ku;rs,ht} + \lam{ij,kt;rs,uh}
+    \tag{2.11} \label{chi}
+\end{equation*}
+また，\eqref{lam2}に関して偏微分交換可能性と\eqref{sym1}により順序の入れ替えに対して以下のような対称性を持つ．
+\begin{equation*}
+    \lam{ij,kh;rs,tu} = \lam{rs,tu;ij,kh} = \lam{ij,kh;tu,rs}
+    \tag{2.12} \label{sym2}
+\end{equation*}
+
+以上で，準備は整ったので具体的に展開をしていく．Lagrangianは仮定より2次の微分項までしか持たないので，\(\mathscr{L} = \mathscr{L}(g_{mn}, g_{mn,p}, g_{mn,pq})\)となる．このことから，\(E^{hk}\)のそれぞれの項を連鎖律に従い展開していく．
+
+はじめに，\(\partial \lam{hk,i} / \partial x^i\)は
+\begin{align*}
+    \frac{\partial}{\partial x^{i}}\left(\frac{\partial \mathcal{L}}{\partial g_{hk,i}}\right) & = \frac{\partial g_{m n}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n} \partial g_{h k, i}}+\frac{\partial q_{m n, p}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p} \partial g_{h k, i}} +\frac{\partial g_{m n, p q}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p q} \partial g_{h k, i}} \\
+    & = \lam{hk,i;mn} g_{mn,i} +\lam{hk,i;mn,p} g_{mn,pi}+\lam{hk,i;mn,pq} g_{mn,pqi}
+\end{align*}
+のようになる．同様にして，\(\partial^2 \lam{hk,ij} / \partial x^i \partial x^j\)の項は，
+\begin{align*}
+    & \frac{\partial^2}{\partial x^{i}\partial x^{j}}\left(\frac{\partial \mathcal{L}}{\partial g_{hk,i}}\right)\\
+    & = \lam{hk,ij;mn} g_{mn,ij}& + & \lam{hk,ij;mn,p} g_{mn,pij} & + & \lam{hk,ij;mn,pq} g_{mn,pqij}
+    \\
+    & + \lam{hk,ij;mn;rs} g_{mn,i}g_{rs,j}& + & \lam{hk,ij;mn;rs,t} g_{mn,i}g_{rs,tj}      & + & \lam{hk,ij;mn;rs,tu} g_{mn,i}g_{rs,tuj}      \\
+    & + \lam{hk,ij;mn,p;rs} g_{mn,pi}g_{rs,j} & + & \lam{hk,ij;mn,p;rs,t} g_{mn,pi}g_{rs,tj}   & + & \lam{hk,ij;mn,p;rs,tu} g_{mn,pi}g_{rs,tuj}   \\
+    & + \lam{hk,ij;mn,pq;rs} g_{mn,pqi}g_{rs,j}& + & \lam{hk,ij;mn,pq;rs,t} g_{mn,pqi}g_{rs,tj} & + & \lam{hk,ij;mn,pq;rs,tu} g_{mn,pqi}g_{rs,tuj}
+\end{align*}
+のようになる．これらの計算から4次の微分項は青いボックスで囲まれたところのみとなり，3次以下の微分の項を今は\(O^{hk} = O^{hk}(g_{ij},\: g_{ij,r}, \: g_{ij,rs},\: g_{ij,rst})\)として
+\begin{equation*}
+    E^{hk} =- \lam{hk,ij;rs,tu} g_{rs,tuij}+O^{hk}
+    \tag{2.13} \label{EL2}
+\end{equation*}
+と書き換えることができる．
+
+\subsection{Lemma 1.}
+先の書き換えの結果から，\(E^{hk}\)の \(g_{rs,tuij}\)のみを取り出すことができた．また，\(E^{hk}\)の中に4次の項を含まないということは，
+\begin{equation*}
+    \dfrac{\partial E^{hk}}{\partial g_{rs,tuij} } = 0
+\end{equation*}
+が成り立つと言い換えられる．このことから，安直にその係数がゼロになる，つまり
+\begin{equation*}
+    \lam{hk,ij;rs,tu}=0
+\end{equation*}
+としてしまうとここまでの計算が台無しになってしまう．
+
+注意すべきは，計量の4次の微分項に関しては\((tuij)\)の添字はどれを交換しても偏微分は交換可能であると仮定しているため対称であり，さらに今\eqref{EL2}の通りそれぞれの添字は縮約を取っているということだ．このようなことを留意すれば，どのような順序の添字で微分してもしっかりと消去可能であるための条件は以下のようになる．
+\begin{align*}
+    \dfrac{\partial E^{hk}}{\partial g_{rs,tuij} }
+    \simeq &　\dfrac{\partial }{\partial g_{rs,tuij}  }
+    (( \lam{hk,ij;rs,tu} + \lam{hk,iu;rs,jt} + \lam{hk,it;rs,uj} \\
+    & +\lam{rs,tu;hk,ij} + \lam{rs,tj;hk,ui} + \lam{rs,ti;hk,ju}) g_{rs,tuij}) \\
+    = & \x{hk,ij;rs,tu}+\x{rs,ij;hk,tu}=0
+\end{align*}
+
+\textbf{Lemma 1.}\:\(E^{hk}\)が
+\begin{equation*}
+    \dfrac{\partial E^{hk}}{\partial g_{rs,tuij} } = 0
+\end{equation*}
+のようになるための必要十分条件は
+\begin{equation*}
+    \x{hk,ij;rs,tu}= -\x{rs,ij;hk,tu}
+    \tag{2.14} \label{lemma1}
+\end{equation*}
+である．
+
+\subsection{Lemma 2.}
+Section2.3での計算をもとに，\(O^{hk}\)の3次の微分項を抽出していく．それ以下の項を\(P^{hk}=P^{hk}(g_{ij}, g_{ij,r},g_{ij,rs})\)とする．
+
+\subsection{Theorem 1.}
+
+\subsection{Remark 1.とLemma 3.}
+\end{document}
