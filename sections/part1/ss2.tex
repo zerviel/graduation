@@ -74,7 +74,7 @@
 \end{align*}
 このとき，偏微分の交換可能性と計量テンソルの添字の対称性を用いて，
 \begin{equation*}
-    2\lam{ij,kh}-2\lam{kh,ij}
+    2\lam{ij,kh}-2\lam{kh,ij}=0
 \end{equation*}
 より，\eqref{sym1}を得られる．\(\blacksquare\)
 
@@ -98,26 +98,28 @@
 
 はじめに，\(\partial \lam{hk,i} / \partial x^i\)は
 \begin{align*}
-    \frac{\partial}{\partial x^{i}}\left(\frac{\partial \mathcal{L}}{\partial g_{hk,i}}\right) & = \frac{\partial g_{m n}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n} \partial g_{h k, i}}+\frac{\partial q_{m n, p}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p} \partial g_{h k, i}} +\frac{\partial g_{m n, p q}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p q} \partial g_{h k, i}} \\
+    \frac{\partial}{\partial x^{i}}\left(\frac{\partial \mathcal{L}}{\partial g_{hk,i}}\right) & = \frac{\partial g_{m n}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n} \partial g_{h k, i}}+\frac{\partial g_{m n, p}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p} \partial g_{h k, i}} +\frac{\partial g_{m n, p q}}{\partial x^{i}} \frac{\partial^{2} \mathcal{L}}{\partial g_{m n, p q} \partial g_{h k, i}} \\
     & = \lam{hk,i;mn} g_{mn,i} +\lam{hk,i;mn,p} g_{mn,pi}+\lam{hk,i;mn,pq} g_{mn,pqi}
 \end{align*}
 のようになる．同様にして，\(\partial^2 \lam{hk,ij} / \partial x^i \partial x^j\)の項は，
 \begin{align*}
     & \frac{\partial^2}{\partial x^{i}\partial x^{j}}\left(\frac{\partial \mathcal{L}}{\partial g_{hk,i}}\right)\\
-    & = \lam{hk,ij;mn} g_{mn,ij}& + & \lam{hk,ij;mn,p} g_{mn,pij} & + & \lam{hk,ij;mn,pq} g_{mn,pqij}
-    \\
+    & = \lam{hk,ij;mn} g_{mn,ij}& + & \lam{hk,ij;mn,p} g_{mn,pij} & + & \color{cyan}{
+    \underline{\textcolor{black}{
+    \lam{hk,ij;mn,pq} g_{mn,pqij}
+    }}}\\
     & + \lam{hk,ij;mn;rs} g_{mn,i}g_{rs,j}& + & \lam{hk,ij;mn;rs,t} g_{mn,i}g_{rs,tj}      & + & \lam{hk,ij;mn;rs,tu} g_{mn,i}g_{rs,tuj}      \\
     & + \lam{hk,ij;mn,p;rs} g_{mn,pi}g_{rs,j} & + & \lam{hk,ij;mn,p;rs,t} g_{mn,pi}g_{rs,tj}   & + & \lam{hk,ij;mn,p;rs,tu} g_{mn,pi}g_{rs,tuj}   \\
     & + \lam{hk,ij;mn,pq;rs} g_{mn,pqi}g_{rs,j}& + & \lam{hk,ij;mn,pq;rs,t} g_{mn,pqi}g_{rs,tj} & + & \lam{hk,ij;mn,pq;rs,tu} g_{mn,pqi}g_{rs,tuj}
 \end{align*}
-のようになる．これらの計算から4次の微分項は青いボックスで囲まれたところのみとなり，3次以下の微分の項を今は\(O^{hk} = O^{hk}(g_{ij},\: g_{ij,r}, \: g_{ij,rs},\: g_{ij,rst})\)として
+のようになる．これらの計算から4次の微分項は青下線部のところのみとなり，3次以下の微分の項を今は\(O^{hk} = O^{hk}(g_{ij},\: g_{ij,r}, \: g_{ij,rs},\: g_{ij,rst})\)として
 \begin{equation*}
     E^{hk} =- \lam{hk,ij;rs,tu} g_{rs,tuij}+O^{hk}
     \tag{2.13} \label{EL2}
 \end{equation*}
 と書き換えることができる．
 
-\subsection{Lemma 1.}
+\subsection{Lemma 1.について}
 先の書き換えの結果から，\(E^{hk}\)の \(g_{rs,tuij}\)のみを取り出すことができた．また，\(E^{hk}\)の中に4次の項を含まないということは，
 \begin{equation*}
     \dfrac{\partial E^{hk}}{\partial g_{rs,tuij} } = 0
@@ -131,7 +133,7 @@
 注意すべきは，計量の4次の微分項に関しては\((tuij)\)の添字はどれを交換しても偏微分は交換可能であると仮定しているため対称であり，さらに今\eqref{EL2}の通りそれぞれの添字は縮約を取っているということだ．このようなことを留意すれば，どのような順序の添字で微分してもしっかりと消去可能であるための条件は以下のようになる．
 \begin{align*}
     \dfrac{\partial E^{hk}}{\partial g_{rs,tuij} }
-    \simeq &　\dfrac{\partial }{\partial g_{rs,tuij}  }
+    \simeq & \dfrac{\partial }{\partial g_{rs,tuij}  }
     (( \lam{hk,ij;rs,tu} + \lam{hk,iu;rs,jt} + \lam{hk,it;rs,uj} \\
     & +\lam{rs,tu;hk,ij} + \lam{rs,tj;hk,ui} + \lam{rs,ti;hk,ju}) g_{rs,tuij}) \\
     = & \x{hk,ij;rs,tu}+\x{rs,ij;hk,tu}=0
@@ -148,10 +150,163 @@
 \end{equation*}
 である．
 
-\subsection{Lemma 2.}
-Section2.3での計算をもとに，\(O^{hk}\)の3次の微分項を抽出していく．それ以下の項を\(P^{hk}=P^{hk}(g_{ij}, g_{ij,r},g_{ij,rs})\)とする．
+\subsection{Lemma 2.について}
+Section2.3での計算をもとに，\(O^{hk}\)の3次の微分項を抽出していく．それ以下の項を\(P^{hk}=P^{hk}(g_{ij}, g_{ij,r},g_{ij,rs})\)とする．具体的に抽出したものが
+\begin{align*}
+    & O^{hk}-P^{hk} \\
+    &= \lam{hk,i;mn,pq} g_{mn,pqi} \\
+    &- ( \lam{hk,ij;mn,p} g_{mn,pij} 
+    + \lam{hk,ij;mn;rs,tu} g_{mn,i}g_{rs,tuj} 
+    + \lam{hk,ij;mn,p;rs,tu} g_{mn,pi}g_{rs,tuj} \\
+    &+\color{cyan}{\underline{\textcolor{black}{
+    \lam{hk,ij;mn,pq;rs} g_{mn,pqi}g_{rs,j} 
+    +  \lam{hk,ij;mn,pq;rs,t} g_{mn,pqi}g_{rs,tj}  
+    +  \lam{hk,ij;mn,pq;rs,tu} g_{mn,pqi}g_{rs,tuj} 
+    }}}\textcolor{black})
+\end{align*}
+これを，計量の3次の微分項できれいに括りまとめ上げその項が消えるために条件を探っていく．
+青下線部を微分する前の状態に書き換える．その際に少々縮約を取っている文字の書き換えを行っている．
+\begin{align*}
+    & O^{hk}-P^{hk} \\
+    &= \lam{hk,r;ab,cd} g_{ab,cdr} \\
+    &-  \lam{hk,rm;ab,c} g_{ab,cmr} 
+    - \lam{hk,mc;ab;rs,tu} g_{ab,m}g_{rs,tuc} 
+    - \lam{hk,em;ab,c;rs,tu} g_{ab,cm}g_{rs,tue} \\
+    &-\color{cyan}{\underline{\textcolor{black}{
+    \dfrac{\partial }{\partial x^r }\lam{hk,rm;ab,cd} g_{ab,cdm}
+    }}}
+\end{align*}
+ここで，青下線部について着目すると
+\begin{equation*}
+    -\dfrac{\partial }{\partial x^r }\lam{hk,rm;ab,cd} g_{ab,cdm} = -[3,1] - [3,2] - [3,3]
+\end{equation*}
+となる．ただし，\([3,i]\)について微分を展開した計量の微分階数に着目し省略したものである．このことに注意すると，先の式同様の式とまとめて次のように書き換えられる．
+\begin{align*}
+    O^{hk}-P^{hk} 
+    &= -2\dfrac{\partial }{\partial x^r }\left( \lam{hk,rm;ab,cd} \right) g_{ab,cdm} + \color{red}{\underline{\textcolor{black}{\lam{hk,r;ab,cd} g_{ab,cdr}}}} \\
+    &-  \color{cyan}{\underline{\textcolor{black}{\lam{hk,rm;ab,c} g_{ab,cmr}}}} 
+    \textcolor{black}{
+    + \lam{hk,em;ab,cd;rs,tu} g_{ab,dcm}g_{rs,tue} }
+    \label{op1} \tag{*1}
+\end{align*}
+右辺をそれぞれの項に着目して変形していき最終的に，
+\begin{align*}
+    &O^{hk}-P^{hk} \\
+    &= - \dfrac{2}{3} \dfrac{\partial }{\partial x^r }\left( \chi ^{hk,rm;ab,cd} \right) g_{ab,cdm} 
+    + \lam{hk,im;ab,cd;rs,tu} g_{ab,cdm}g_{rs,tui}  \\
+    &\color{red}{\underline{\textcolor{black}{-
+        \varGamma^m_{ji} \lam{hk,ji;ab,cd}g_{ab,cdm} -\dfrac{2}{3}\varGamma^k_{ji}
+    \chi ^{hj,im;ab,cd} g_{ab,cdm} - \dfrac{2}{3}\varGamma^h_{ji}\chi ^{kj,im;ab,cd} g_{ab,cdm}}}} \\
+    &\color{cyan}{\underline{\textcolor{black}{+
+        \varGamma^c_{ji} \lam{ab,ji;hk,md}g_{ab,cdm} + \dfrac{2}{3}\varGamma^a_{ji}\chi ^{bj,ic;hk,md} g_{ab,cdm} + \dfrac{2}{3}\varGamma^b_{ji}\chi ^{aj,ic;hk,md} g_{ab,cdm}}}}
+    \label{op2} \tag{*2}
+\end{align*}
+のような形にしていく．
+
+~\eqref{op1}の右辺の第1項は，\(ab\)については完全に対称であるので縮約を取っていてもここの入れ替えの可能性は無視できる．問題になるのは，\(cdm\)の縮約部分である．\(\Lambda\)の\(cd\)は対称であるが，\(m\)とは対称ではない．なのですべての可能性は，\(mcd\)に関してcyclicな入れ替えをしたものとなる．よって重複分と相殺するように，\(3!/2\)で割れば，\eqref{op2}の右辺第1項のように書き換えられる．
+
+次に，赤線部については~\eqref{id2}を用いて展開する．その際セミコロン前後の入れ替えに関しては対称であること，Christoffel記号に\(g_{ab,cd}\)が含まれないことを思い出すと，
+\begin{align*}
+    &\color{red}{\underline{\textcolor{black}{\lam{hk,r;ab,cd} g_{ab,cdr}}}} \\
+    &=- \dfrac{\partial }{\partial g_{ab,cd} } 
+    \left( 
+        \varGamma^m_{ji} \lam{hk,ji} + 2\varGamma^k_{ji} \lam{hj,im} 
+        + 2\varGamma^h_{ji}\lam{kj,im}
+    \right) g_{ab,cdm}\\
+    &= - \varGamma^m_{ji} \lam{hk,ji;ab,cd}g_{ab,cdm} -2\varGamma^k_{ji}
+    \lam{hj,im;ab,cd} g_{ab,cdm} - 2\varGamma^h_{ji}\lam{kj,im;ab,cd} g_{ab,cdm}\\
+    &= - \varGamma^m_{ji} \lam{hk,ji;ab,cd}g_{ab,cdm} -\dfrac{2}{3}\varGamma^k_{ji}
+    \x{hj,im;ab,cd} g_{ab,cdm} - \dfrac{2}{3}\varGamma^h_{ji}\x{kj,im;ab,cd} g_{ab,cdm}
+\end{align*}
+のように変形できる．ただし，最後の変形では先の議論同様に右辺第2，3項を\(\chi\)を用いて書き換えた．同様に，青線部も書き換えることができる．注意すべき点として，原論文に準拠してダミーインデックスを赤線部では\(r \rightarrow m \rightarrow i\)のように適宜変更している．
+
+次に，最後の変形を行う．最後の変形では，~\eqref{op2}は以下のようになる．
+\begin{align*}
+    O^{hk}-P^{hk} 
+    = &\left[
+    - \dfrac{2}{3}{\left( \chi ^{hk,mi;rs,tu} \right)}_{|m}
+    + \lam{hk,mi;rs,tu;ab,cd} g_{ab,cdm}  \right.\\
+    &+\left.
+        \dfrac{1}{3}\varGamma^p_{jm}\alpha _p ^{i,hk,mj;rs,tu}
+    \right]g_{rs,tui}
+    \label{op3} \tag{2.15}
+\end{align*}
+
+ただし，
+\begin{align*}
+    \alpha _p ^{i,hk,mj;rs,tu} 
+    \equiv &\delta ^i_p(\x{hk,mj;rs,tu}+ \x{rs,mj;hk,tu}) \\
+    &+ \delta ^t_p(\x{hk,mj;rs,ui}+ \x{rs,mj;hk,ui}) \\
+    &+ \delta ^u_p(\x{hk,mj;rs,ti}+ \x{rs,mj;hk,ti}) \\
+    &+ \delta ^r_p(\x{hk,mi;js,tu}+ \x{js,mi;hk,tu} +\x{hk,ji;ms,tu}+ \x{sm,ji;hk,tu}) \\
+    &+ \delta ^s_p(\x{hk,mi;jr,tu}+ \x{jr,mi;hk,tu} +\x{hk,ji;mr,tu}+ \x{rm,ji;hk,tu}) 
+    \tag{2.16} \label{alpha}
+\end{align*}
+と定義する．
+
+\textcolor{purple}{この変形に関してはまだ検証できていません．}
+
+~\eqref{op3}を用いると，
+\begin{equation*}
+    \dfrac{\partial E^{hk}}{\partial g_{ij,rst} }=\dfrac{\partial O^{hk}}{\partial g_{ij,rst} }=0
+\end{equation*}
+となる．このときの必要十分条件は
+\begin{align*}
+    &\dfrac{\partial E^{hk}}{\partial g_{ij,rst} }=\dfrac{\partial O^{hk}}{\partial g_{ij,rst} }\\
+    &= \dfrac{\partial }{\partial g_{q_1q_2,q_3q_4q_5} }\left( \left[
+        - \dfrac{2}{3}{\left( \chi ^{hk,mi;rs,tu} \right)}_{|m}
+        + \lam{hk,mi;rs,tu;ab,cd} g_{ab,cdm}  
+        + \dfrac{1}{3}\varGamma^p_{jm}\alpha _p ^{i,hk,mj;rs,tu}
+        \right] g_{rs,tui} \right)\\
+    &= \dfrac{\partial }{\partial g_{q_1q_2,q_3q_4q_5} }\biggl[\:\: \biggr] g_{ab,cdm} 
+    +\biggl[\:\: \biggr] \dfrac{\partial }{\partial g_{q_1q_2,q_3q_4q_5} } g_{ab,cdm}\\
+    &= \cdots
+\end{align*}
+となる．\textcolor{purple}{この変形に関してもまだ検証できていません．}
+
+\textbf{Lemma 2.}
+
+\begin{equation*}
+    \dfrac{\partial E^{hk}}{\partial g_{ij,rst} }=0
+\end{equation*}
+となるための必要十分条件は
+\begin{equation*}
+    {2\chi ^{hk,mi;rs,tu}}_{|m} - \varGamma ^p _{jm}\alpha _p ^{i,hk,mj;rs,tu} = 0
+    \label{lemma2}\tag{2.17}
+\end{equation*}
+となる．
 
 \subsection{Theorem 1.}
+以上のLemma1.とLemma2.の2つが同時に満たされるとき計量の3次4次の項が消えるための必要十分条件となるということになる．しかし，注意したいこととしてLemma1.の~\eqref{lemma1}が満たされるとき，~\eqref{alpha}は常にゼロとなる．つまり，条件はよりコンパクトに
+
+\begin{equation*}
+    {\x{hk,mi;rs,tu}}_{|m} =0
+\end{equation*}
+ということになる．よって，結論として下記の定理を導くことができる．
+
+\textbf{Theorem 1.}
+
+\begin{equation*}
+    \mathscr{L}= \mathscr{L}(g_{ij}, g_{ij,k}, g_{ij,kh})
+\end{equation*}
+となるための必要十分条件は
+\begin{align*}
+    &\x{hk,ij;rs,tu}= -\x{rs,ij;hk,tu}\\
+    &{\chi ^{hk,mi;rs,tu}}_{|m} =0
+    \tag{2.18} \label{thm1}
+\end{align*}
+の2つである．
 
 \subsection{Remark 1.とLemma 3.}
+この項は少々脱線である．今議論の順序として4次の微分項から3次の微分項を順に落としていったが，3次の項だけ消え4次の項だけ生き残るような可能性については議論してこなかった．つまり，Lemma1.が成り立っていない場合でのLemma2.の~\eqref{lemma2}のより強い条件について考える必要がある．しかし，実はこの式は任意の座標変換に対称でないつまりテンソルになっていない．見ての通りChristoffel記号が顕に入っており，いかなるChristoffelに対して3次の項が欠落するには以下のような条件となる．
+
+\textbf{Lemma 3.}
+\(g_{ij}\)の3次の微分項が消えるためには，
+\begin{align*}
+    {\chi ^{hk,mi;rs,tu}}_{|m} =0\\
+    \alpha _p ^{i,hk,mj;rs,tu} =0
+\end{align*}
+が成り立つときに限り，任意の座標変換で\(E^{hk}\)から落とすことができる．
+
+つまり注意しなければならないのは，\eqref{alpha}が0の条件から\eqref{lemma1}が常に満たされるわけではないことに注意しなければならない．
 \end{document}

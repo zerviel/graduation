@@ -3,14 +3,53 @@
 %1.3[Dimensionality Restrictions]
 
 \begin{document}
-\subsection{Lemma 4.}
+この章では，最終的に導きたい結論であった4次元においてはRiemann計量による場の方程式4次元ではEinstein方程式が唯一の方程式になることを示していく．実は，これまでの議論は触れてこなかったが次元\(n\)に関する指定を何もしていなかった．つまり，これより前の結果は一般の次元\(n\)で成り立つ結論となっている．
 
-\subsection{Proof of Theorem 2.}
+これ以後の議論では，具体的に次元を2次元，3次元，4次元と指定して進めて場の方程式が得ていく．
+\subsection{Lemma 4.について}
+まずは，簡単な2次元と3次元について検証していく．
 
-\subsection{Theorem 3.}
+\textbf{Lemma 4.}
+\(n=2,3\)のいづれの場合で，なおかつ\eqref{lemma1}が満たされるとき，
+\begin{equation*}
+    \lam{ij,kh;rs,tu}=0
+\end{equation*}
+となる．これは，\(\lam{ij,kh;rs,tu}\)のもつ対称性\eqref{id1}，\eqref{sym1}と\eqref{lemma1}を適応すると\(n=2,3\)の場合にはその多くは重複し結果的に0となることを示せる\textcolor{red}{はずである．鋭意検証中です．}
+このことから言える結論は，
+\begin{equation*}
+    \chi ^{hk,mi;rs,tu}=0
+\end{equation*}
+ということになる．当然その発散はなくなり，反対称にしようがゼロはゼロななのでLemma 1.と2.は自動的に満たすことなる．つまり，\(n=2,3\)の場合においては花から3次のEL方程式はないという結論となる．しかしこれで満足してはいけない，これよりも強い結論を引き出すことができる．
+\subsection{Theorem 2.とその証明}
+\textbf{Theorem 2.}\(n=2,3\)のときに限り，2次のEL方程式が得られるLagrangianは以下のみである．
+\begin{equation*}
+    \mathscr{L} = a\sqrt{g}R + b\sqrt{g}
+    \tag{3.1}\label{seclag}
+\end{equation*}
+ただし，\(a,b=const.\)であり\(R\)はスカラー曲率である．
 
-\subsection{Theorem 4.}
+\textbf{proof.}
+Lemma 4.と\eqref{lam2}から，
+\begin{equation*}
+    \lam{ij,kh;rs,tu}= \dfrac{\partial \lam{ij,kh}}{\partial g_{rs,tu} } =0
+\end{equation*}
+より，
+\begin{equation*}
+    \lam{ij,hk} = \lam{ij,hk}(g_{rs},g_{rs,t})
+    \tag{3.2}\label{3.2}
+\end{equation*}
+となる．
+ここで，DU PLESSISの（[3],p.53）\footnote{この論文が見つからない．}の論文によれば，\(g_{rs,tu}\)に依存しないそれ以下の微分項による任意のテンソルは1次の微分項からも独立しているため，
+\begin{equation*}
+    \lam{ij,hk} = \lam{ij,hk}(g_{rs})
+\end{equation*}
+とかける．\textcolor{red}{証明は捜索検討中．}
 
-\subsection{Theorem 5.}
+
+\subsection{Theorem 3.とその証明}
+
+\subsection{Theorem 4.とその証明}
+
+\subsection{Theorem 5.とその証明}
 
 \end{document}
