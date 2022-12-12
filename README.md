@@ -1,5 +1,5 @@
 # graduation
-卒業論文
+
     11/18 ver1.3移行完了
     
     12/12 ver1.5 Theorem2の途中まで

@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {3}Dimensionality Restrictions}{12}{}%
 \contentsline {subsection}{\numberline {3.1}Lemma 4.について}{12}{}%
 \contentsline {subsection}{\numberline {3.2}Theorem 2.とその証明}{13}{}%
-\contentsline {subsection}{\numberline {3.3}Theorem 3.とその証明}{13}{}%
-\contentsline {subsection}{\numberline {3.4}Theorem 4.とその証明}{13}{}%
-\contentsline {subsection}{\numberline {3.5}Theorem 5.とその証明}{13}{}%
-\contentsline {part}{第II部\hspace {1zw}The Einstein Tensor and Its Generalizations}{14}{}%
+\contentsline {subsection}{\numberline {3.3}Theorem 3.とその証明}{14}{}%
+\contentsline {subsection}{\numberline {3.4}Theorem 4.とその証明}{14}{}%
+\contentsline {subsection}{\numberline {3.5}Theorem 5.とその証明}{14}{}%
+\contentsline {part}{第II部\hspace {1zw}The Einstein Tensor and Its Generalizations}{15}{}%
